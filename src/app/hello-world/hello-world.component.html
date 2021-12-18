@@ -1,0 +1,24 @@
+<div class="hello">
+  <h2 *ngIf="showHeading; else otherHeading">{{ message }}</h2>
+  <ng-template #otherHeading>
+    <h3>heading hide! please click button again!</h3>
+  </ng-template>
+  <p [contentEditable]="showHeading">{{message}}</p>
+
+  <button (click)="toggleHeading()">toggle heading</button>
+  <p
+    [id]="pId"
+    [style.color]="pColor"
+  >
+    This is first component.
+  </p>
+  <button
+    [disabled]="canClick"
+    (click)="sayHello()"
+  >
+    submit!
+  </button>
+
+  <hr>
+  <button (click)="onLogMe()">usage server</button>
+</div>
