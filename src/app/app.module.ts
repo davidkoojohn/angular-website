@@ -4,11 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
+import { MyStoreComponent } from './my-store/my-store.component';
+import { ProductListComponent } from './my-store/product-list/product-list.component';
+import { ProductAlertsComponent } from './my-store/product-alerts/product-alerts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloWorldComponent
+    HelloWorldComponent,
+    MyStoreComponent,
+    ProductListComponent,
+    ProductAlertsComponent
   ],
   imports: [
     BrowserModule,
@@ -16,7 +22,8 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
   ],
   providers: [],
   bootstrap: [
-    AppComponent
+    // AppComponent,
+    MyStoreComponent
   ]
 })
 export class AppModule { }
