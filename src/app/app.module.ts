@@ -12,6 +12,7 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductCartComponent } from './product-cart/product-cart.component';
 import { ProductShippingComponent } from './product-shipping/product-shipping.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductShippingComponent } from './product-shipping/product-shipping.co
     ProductAlertsComponent,
     ProductDetailsComponent,
     ProductCartComponent,
-    ProductShippingComponent
+    ProductShippingComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
