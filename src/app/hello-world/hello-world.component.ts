@@ -8,6 +8,7 @@ import { LoggerService } from "../service/logger.service"
 })
 export class HelloWorldComponent implements OnInit {
   @Input() count10?: number;
+  @Input() msg?: string;
   constructor(
     private logger: LoggerService,
   ) {}
@@ -22,7 +23,9 @@ export class HelloWorldComponent implements OnInit {
     console.log("ngOnInit", "hello-world, =====")
   }
 
-  ngOnChanges() {
+  ngOnChanges(changes: any) {
+    console.log("ngOnChanges", "hello-world, =====")
+    console.log(changes)
     console.log("ngOnChanges", "hello-world, =====")
     console.log(this.count10)
   }

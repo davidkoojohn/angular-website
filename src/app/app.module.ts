@@ -14,6 +14,7 @@ import { ProductCartComponent } from './product-cart/product-cart.component';
 import { ProductShippingComponent } from './product-shipping/product-shipping.component';
 import { LandingComponent } from './landing/landing.component';
 import { AboutComponent } from './about/about.component';
+import { SpyDirective } from './directive/spy.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AboutComponent } from './about/about.component';
     ProductCartComponent,
     ProductShippingComponent,
     LandingComponent,
-    AboutComponent
+    AboutComponent,
+    SpyDirective
   ],
   imports: [
     BrowserModule,
