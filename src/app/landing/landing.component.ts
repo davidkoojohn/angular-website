@@ -1,4 +1,4 @@
-import {Component, ContentChild, OnInit, ViewChild} from '@angular/core';
+import {Component, ContentChild, OnDestroy, ViewChild} from '@angular/core';
 import { HelloWorldComponent } from "../hello-world/hello-world.component"
 
 @Component({
@@ -6,16 +6,19 @@ import { HelloWorldComponent } from "../hello-world/hello-world.component"
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.less']
 })
-export class LandingComponent implements OnInit {
+export class LandingComponent implements OnDestroy {
   constructor() { }
   title = 'Angular App';
   count: number = 0
   // 通过带@ViewChild装饰器的属性来访问子视图。
-  @ViewChild(HelloWorldComponent) helloChild!: HelloWorldComponent;
-  // 通过带有@ContentChild装饰器的属性来查询到“子级内容”
-  @ContentChild(HelloWorldComponent) helloChildContent!: HelloWorldComponent;
+  @ViewChild(HelloWorldComponent)
+  private helloChild!: HelloWorldComponent;
   ngOnInit(): void {
     console.log("ngOnInit", "landing ------")
+  }
+
+  ngOnDestroy() {
+    console.log("clear")
   }
 
   ngOnChanges() {
@@ -40,7 +43,6 @@ export class LandingComponent implements OnInit {
 
   ngAfterViewChecked() {
     console.log(this.helloChild)
-    console.log(this.helloChildContent)
     console.log("ngAfterViewChecked", "landing ------")
   }
 
@@ -53,6 +55,10 @@ export class LandingComponent implements OnInit {
   }
   reversedTitle() {
     this.title = this.title.split("").reverse().join("")
+  }
+
+  getRMsg(event: string) {
+    console.log(event)
   }
 
 }

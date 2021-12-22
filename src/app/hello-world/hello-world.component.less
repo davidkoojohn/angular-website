@@ -1,9 +1,29 @@
+:host {
+  width: 80%;
+}
+
+:host(.active) {
+  background-color: red;
+}
+
+//:host-context {
+:host-context(.x1) {
+  font-weight: 100;
+}
+
 .hello {
-  width: 600px;
   text-align: center;
   border: 1px solid #333;
   padding: 10px;
   box-sizing: border-box;
   margin: 20px 0;
   border-radius: 5px;
+}
+
+h2 {
+  background-color: rebeccapurple;
+}
+
+body {
+  background-color: #1976d2;
 }
