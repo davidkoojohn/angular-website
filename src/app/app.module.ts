@@ -15,6 +15,7 @@ import { ProductShippingComponent } from './product-shipping/product-shipping.co
 import { LandingComponent } from './landing/landing.component';
 import { AboutComponent } from './about/about.component';
 import { SpyDirective } from './directive/spy.directive';
+import { AboutInfoComponent } from './about-info/about-info.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SpyDirective } from './directive/spy.directive';
     ProductShippingComponent,
     LandingComponent,
     AboutComponent,
-    SpyDirective
+    SpyDirective,
+    AboutInfoComponent,
   ],
   imports: [
     BrowserModule,
