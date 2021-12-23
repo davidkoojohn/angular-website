@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http"
-import { ReactiveFormsModule } from "@angular/forms"
+import { ReactiveFormsModule, FormsModule } from "@angular/forms"
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app/app.component';
@@ -17,6 +17,7 @@ import { AboutComponent } from './about/about.component';
 import { SpyDirective } from './directive/spy.directive';
 import { AboutInfoComponent } from './about-info/about-info.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { HeroesMainComponent } from './heroes-main/heroes-main.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +34,14 @@ import { HeroesComponent } from './heroes/heroes.component';
     SpyDirective,
     AboutInfoComponent,
     HeroesComponent,
+    HeroesMainComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [
