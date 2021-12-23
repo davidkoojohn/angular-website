@@ -16,6 +16,7 @@ import { LandingComponent } from './landing/landing.component';
 import { AboutComponent } from './about/about.component';
 import { SpyDirective } from './directive/spy.directive';
 import { AboutInfoComponent } from './about-info/about-info.component';
+import { HeroesComponent } from './heroes/heroes.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AboutInfoComponent } from './about-info/about-info.component';
     AboutComponent,
     SpyDirective,
     AboutInfoComponent,
+    HeroesComponent,
   ],
   imports: [
     BrowserModule,

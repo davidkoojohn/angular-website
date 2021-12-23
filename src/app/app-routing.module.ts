@@ -6,9 +6,11 @@ import { ProductCartComponent } from './product-cart/product-cart.component';
 import { ProductShippingComponent } from './product-shipping/product-shipping.component';
 import { LandingComponent } from './landing/landing.component';
 import { AboutComponent } from './about/about.component';
+import { HeroesComponent } from './heroes/heroes.component';
 
 const routes: Routes = [
   { path: "", component: LandingComponent },
+  { path: "heroes", component: HeroesComponent },
   { path: "about", component: AboutComponent },
   /*
   // My Store
