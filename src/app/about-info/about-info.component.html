@@ -1,7 +1,21 @@
 <section>
-  <p>about-info works!</p>
-  <p>Default:</p>
+  <p
+    [style]="styleObj"
+    (click)="handleClick($event)"
+  >
+    about-info works!
+  </p>
+  <p
+    [style.background-color]="'red'"
+    [style.border]="styleObj.border"
+  >Default:</p>
   <ng-content></ng-content>
-  <p>Question:</p>
+  <p [class.blue]="isBlue">Question:</p>
   <ng-content select="[question]"></ng-content>
 </section>
+<form #myForm (submit)="handleSubmit(myForm, $event)">
+  <input #enter type="text" [value]="val" (input)="handleChange(enter.value)">
+  <p>{{ val }}</p>
+  <hr>
+  <button>submit</button>
+</form>
