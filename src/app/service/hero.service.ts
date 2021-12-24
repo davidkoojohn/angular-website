@@ -38,6 +38,33 @@ export class HeroService {
       )
   }
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  }
+  updateHero(hero: IHero): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, this.httpOptions)
+      .pipe(
+        tap(_ => this.log(`updated hero id=${hero.id}`)),
+        catchError(this.handleError<any>(`updateHero`))
+      )
+  }
+
+  addHero(hero: IHero): Observable<IHero> {
+    return this.http.post<IHero>(this.heroesUrl, hero, this.httpOptions)
+      .pipe(
+        tap((newHero: IHero) => this.log(`added hero w/ id=${newHero.id}`)),
+        catchError(this.handleError<IHero>(`addHero`))
+      )
+  }
+
+  deleteHero(id: number): Observable<IHero> {
+    return this.http.delete<IHero>(`${this.heroesUrl}/${id}`, this.httpOptions)
+      .pipe(
+        tap(_ => this.log(`deleted hero id=${id}`)),
+        catchError(this.handleError<IHero>('deleteHero'))
+      );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure

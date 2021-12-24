@@ -1,4 +1,9 @@
 <h2>My Heroes</h2>
+<div>
+  <label for="name">Hero name: </label>
+  <input type="text" id="name" #heroName>
+  <button (click)="add(heroName.value); heroName.value = '';">Add Hero</button>
+</div>
 <ul class="heroes">
   <li
     *ngFor="let item of heroes"
@@ -7,6 +12,7 @@
       <span class="badge">{{ item.id }}</span>
       {{ item.name }}
     </a>
+    <button (click)="delete(item)">&times;</button>
   </li>
 </ul>
 
