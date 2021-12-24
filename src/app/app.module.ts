@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http"
 import { ReactiveFormsModule, FormsModule } from "@angular/forms"
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api"
+import { InMemoryDataService } from "./service/in-memory-data.service"
 
 import { AppComponent } from './app/app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
@@ -45,6 +47,11 @@ import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.co
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService,
+      {
+        dataEncapsulation: false
+      }),
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
