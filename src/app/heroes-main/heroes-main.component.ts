@@ -16,7 +16,6 @@ export class HeroesMainComponent implements OnInit {
   selectedHero?: IHero;
   handleSelect(hero: IHero): void {
     this.selectedHero = hero
-    console.log(this.selectedHero)
   }
 
   ngOnInit(): void {
