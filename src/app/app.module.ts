@@ -19,6 +19,7 @@ import { AboutInfoComponent } from './about-info/about-info.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroesMainComponent } from './heroes-main/heroes-main.component';
 import { HeroesDetailComponent } from './heroes-detail/heroes-detail.component';
+import { HeroesMessagesComponent } from './heroes-messages/heroes-messages.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HeroesDetailComponent } from './heroes-detail/heroes-detail.component';
     HeroesComponent,
     HeroesMainComponent,
     HeroesDetailComponent,
+    HeroesMessagesComponent,
   ],
   imports: [
     BrowserModule,
