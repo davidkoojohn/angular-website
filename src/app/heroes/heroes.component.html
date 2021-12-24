@@ -1,7 +1,12 @@
 <header class="sub-header">
   <h1>{{ title }}</h1>
 </header>
+<nav>
+  <a [routerLink]="['/heroes/dashboard']">Dashboard</a>
+  |
+  <a [routerLink]="['/heroes']">Heroes</a>
+</nav>
 <main>
-  <app-heroes-main></app-heroes-main>
+  <router-outlet></router-outlet>
   <app-heroes-messages></app-heroes-messages>
 </main>

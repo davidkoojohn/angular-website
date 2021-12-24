@@ -20,6 +20,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroesMainComponent } from './heroes-main/heroes-main.component';
 import { HeroesDetailComponent } from './heroes-detail/heroes-detail.component';
 import { HeroesMessagesComponent } from './heroes-messages/heroes-messages.component';
+import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { HeroesMessagesComponent } from './heroes-messages/heroes-messages.compo
     HeroesMainComponent,
     HeroesDetailComponent,
     HeroesMessagesComponent,
+    HeroesDashboardComponent,
   ],
   imports: [
     BrowserModule,

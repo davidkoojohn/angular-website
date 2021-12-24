@@ -7,10 +7,19 @@ import { ProductShippingComponent } from './product-shipping/product-shipping.co
 import { LandingComponent } from './landing/landing.component';
 import { AboutComponent } from './about/about.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.component';
+import { HeroesMainComponent } from './heroes-main/heroes-main.component';
+import { HeroesDetailComponent } from './heroes-detail/heroes-detail.component';
 
 const routes: Routes = [
   { path: "", component: LandingComponent },
-  { path: "heroes", component: HeroesComponent },
+  { path: "heroes", component: HeroesComponent,
+    children: [
+      { path: "detail/:id", component: HeroesDetailComponent },
+      { path: "", component: HeroesMainComponent },
+      { path: "dashboard", component: HeroesDashboardComponent },
+    ]
+  },
   { path: "about", component: AboutComponent },
   /*
   // My Store
