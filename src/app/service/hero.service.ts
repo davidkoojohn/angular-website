@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from "rxjs"
-import { catchError, map, tap } from "rxjs/operators"
+import { catchError, tap } from "rxjs/operators"
 import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { IHero } from "../hero"
 import { MessageService } from './message.service';
@@ -16,7 +16,7 @@ export class HeroService {
     private http: HttpClient
   ) { }
 
-  private heroesUrl = "api/heroes"
+  private heroesUrl = "//localhost:3000/heroes"
 
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`)
@@ -34,7 +34,7 @@ export class HeroService {
     if (!term.trim()) {
       return of([])
     }
-    return this.http.get<IHero[]>(`${this.heroesUrl}/?name=${term}`)
+    return this.http.get<IHero[]>(`${this.heroesUrl}/?q=${term}`)
       .pipe(
         tap(x => x.length
           ? this.log(`found heroes matching "${term}"`)
@@ -55,7 +55,7 @@ export class HeroService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
   updateHero(hero: IHero): Observable<any> {
-    return this.http.put(this.heroesUrl, hero, this.httpOptions)
+    return this.http.put(`${this.heroesUrl}/${hero.id}`, hero, this.httpOptions)
       .pipe(
         tap(_ => this.log(`updated hero id=${hero.id}`)),
         catchError(this.handleError<any>(`updateHero`))

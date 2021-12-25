@@ -49,11 +49,11 @@ import { HeroesSearchComponent } from './heroes-search/heroes-search.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
+    /*HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService,
       {
         dataEncapsulation: false
-      }),
+      }),*/
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
