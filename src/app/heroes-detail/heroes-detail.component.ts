@@ -19,6 +19,9 @@ export class HeroesDetailComponent implements OnInit {
 
   hero?: IHero
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      console.log(params.get("id"))
+    })
     this.getHero()
   }
 
